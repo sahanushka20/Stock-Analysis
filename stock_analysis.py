@@ -83,3 +83,6 @@ with news:
         news_sentiment = df_news['sentiment_summary'][i]
         st.write(f'News Sentiment {news_sentiment}')
 
+if __name__ == "__main__":
+    import os
+    os.system("streamlit run stock_analysis.py --server.port 8000 --server.address 0.0.0.0")
