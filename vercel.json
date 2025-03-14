@@ -1,0 +1,15 @@
+{
+    "builds": [
+      {
+        "src": "stock_analysis.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "stock_analysis.py"
+      }
+    ]
+  }
+  
