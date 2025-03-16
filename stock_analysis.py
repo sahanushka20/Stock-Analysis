@@ -39,8 +39,8 @@ pricing_data, fundamental_data, news = st.tabs(["Pricing Data", "Fundamental Dat
 # Pricing Data Tab
 with pricing_data:
     st.write('Price Movements')
-    data2 = data.copy()
-    data2['% Change'] = data['Adj Close'].pct_change()
+    data2 = data
+    data2['% Change'] = data['Adj Close'] / data['Adj Close'].shift(1) - 1
     st.write(data)
     annual_return = data2['% Change'].mean() * 252 * 100
     st.write(f"Annual Return: {annual_return:.2f}%")
